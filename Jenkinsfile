@@ -59,7 +59,7 @@ node ('slave1'){
 	echo "Staging frontend is at ${STAGING_FRONT_IP}"
 	def STAGING_FRONT_URL = "http://" + STAGING_FRONT_IP.trim() + ":3000"
 	dir('it'){
-	  git 'https://github.com/antweiss/cicd-workshop.git'
+	  git 'https://github.com/tomciau/cicd-workshop.git'
 	  withEnv(["STAGING_FRONT_URL=${STAGING_FRONT_URL}"]){
 	    sh 'ls'
 	    sh './integration-tests/run.sh'
